@@ -1,4 +1,30 @@
 body{
-    background-color: cyan;
+    background-color: black;
     color: white;
+    text-align: center;
+}
+h1{
+    color: green;
+    text-align: center;
+}
+h2{
+    color: blue;
+}
+h6{
+    color: yellow;
+    text-align: center;
+}
+li{
+    color: purple;
+}
+a{
+    text-decoration: none;
+    color: red;
+}
+.bold{
+    font-weight: bold;
+}
+.table{
+    margin: 0 auto;
+    width: 90%;
 }
