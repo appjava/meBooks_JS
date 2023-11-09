@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>meBooks App</title>
     <link rel="stylesheet" href="src/styles.css" >
-    <script src="src/app.js"></script>
+    
         
 </head>
 <body>
@@ -13,53 +13,27 @@
     <h2><button onclick="creaFun()">Create</button> - <button onclick="reaFun()">Read</button> - <button onclick="upFun()">Update</button> - <button onclick="delFun()">Delete</button></h2>
     <hr>
     <br>
+
     <table class="table">
-        <tr>
-          <td class="bold">ID</td>
-          <td class="bold">TITLE</td>
-          <td class="bold">AUTHOR</td>
-          <td class="bold">GENERE</td>
-          <td class="bold">PAGES</td>
-          <td class="bold">STATUS</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td class="bold" id="title"></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Frontera Oscura</td>
-          <td>Sabino Cabeza</td>
-          <td>Fiction</td>
-          <td>315</td>
-          <td>Finished</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>El Poder Del Ahora</td>
-          <td>Toel</td>
-          <td>Help</td>
-          <td>200</td>
-          <td>Reading</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>The Time Machine</td>
-          <td>Wells</td>
-          <td>Fiction</td>
-          <td>150</td>
-          <td>Waiting</td>
-        </tr>
-      </table>
-      
+    <thead>
+      <tr>
+        <td class="bold">ID</td>
+        <td class="bold">TITLE</td>
+        <td class="bold">AUTHOR</td>
+        <td class="bold">GENERE</td>
+        <td class="bold">PAGES</td>
+        <td class="bold">STATUS</td>
+      </tr>
+    </thead>
+    <tbody id="titles">
+    </tbody>
+    </table>
+  
+  
     <br>
     <h5>Derechos Reservados - 2023</h5>
     <hr>
     <h6>Powered by EchoGroup</h6>
-    
+<script src="src/app.js"></script>
 </body>
 </html>
