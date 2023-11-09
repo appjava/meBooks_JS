@@ -1,27 +1,27 @@
 console.log("Started App");
 
-const books = [
-  {ID:"1", TITLE:"Frontera Oscura", AUTHOR:"Sabino Cabeza", GENERE:"Fiction", PAGES:"315", STATUS:"Finished"},
-  {ID:"2", TITLE:"El Poder Del Ahora", AUTHOR:"Toel", GENERE:"Help", PAGES:"200", STATUS:"Waiting"},
-  {ID:"3", TITLE:"Time Machine", AUTHOR:"Wells", GENERE:"Fiction", PAGES:"500", STATUS:"Reading"}
-]
+let bodyTable = document.getElementById('bodyTable');
+let bodyTableContent = '';
 
-let titulo = document.getElementById('titles');
-let output = '';
+//------------ Read JSON File ----------------------------
+fetch('src/books.json').then(response => response.json())
+  .then(data => {
+    for (let i=0; i<data.length; i++){
+      bodyTableContent = bodyTableContent + `
+      <tr>
+      <td>${data[i].ID}</td>
+      <td>${data[i].TITLE}</td>
+      <td>${data[i].AUTHOR} </td>
+      <td>${data[i].GENERE}</td>
+      <td>${data[i].PAGES}</td>
+      <td>${data[i].STATUS}</td>
+      </tr>`;
+      bodyTable.innerHTML = bodyTableContent;
+    };
+    jsonBooks = JSON.stringify(data);
+  })
+//----------------------------------------------------------
 
-for (let i=0; i<books.length; i++){
-  output = output + `
-  <tr>
-  <td>${books[i].ID}</td>
-  <td>${books[i].TITLE}</td>
-  <td>${books[i].AUTHOR} </td>
-  <td>${books[i].GENERE}</td>
-  <td>${books[i].PAGES}</td>
-  <td>${books[i].STATUS}</td>
-  </tr>`;
-
-  titulo.innerHTML = output;
-}
 
 
 function creaFun(){
@@ -29,15 +29,15 @@ function creaFun(){
   //window.alert("Creating...");
   title = prompt("\nBook Title: ");
   autor = prompt("\nBook Author: ")
-  title = prompt("\nBook Genere: ");
-  title = prompt("\nBook Pages: ");
-  title = prompt("\nStatus: ");
+  genere = prompt("\nBook Genere: ");
+  pages = prompt("\nBook Pages: ");
+  state = prompt("\nStatus: ");
   alert("New Book Created!!!");
 
 }
 function reaFun(){
   //console.log("Reading...");
-  window.alert("Reading...");
+  window.alert("Reading All Books\n" + jsonBooks);
 }
 function upFun(){
   //console.log("Updating...");

@@ -1,0 +1,5 @@
+[
+    {"ID":"1", "TITLE":"Frontera Oscura", "AUTHOR":"Sabino Cabeza", "GENERE":"Fiction", "PAGES":"315", "STATUS":"Finished"},
+    {"ID":"2", "TITLE":"El Poder Del Ahora", "AUTHOR":"Toel", "GENERE":"Help", "PAGES":"200", "STATUS":"Waiting"},
+    {"ID":"3", "TITLE":"Time Machine", "AUTHOR":"Wells", "GENERE":"Fiction", "PAGES":"500", "STATUS":"Reading"}
+]
