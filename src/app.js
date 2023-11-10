@@ -2,6 +2,8 @@ console.log("Started App");
 
 let bodyTable = document.getElementById('bodyTable');
 let bodyTableContent = '';
+let arrayBooks = [];
+let jsonBooks = JSON.stringify(arrayBooks);
 
 function readJSONFile(){
 
@@ -27,12 +29,10 @@ fetch('src/books.json').then(response => response.json())
   })
 //----------------------------------------------------------
 }
-readJSONFile();
+//readJSONFile();
 
 function creaFun(){
   
-  //console.log("Creating...");
-  //window.alert("Creating...");
   title = prompt("\nBook Title: ");
   author = prompt("\nBook Author: ")
   genere = prompt("\nBook Genere: ");
@@ -41,7 +41,8 @@ function creaFun(){
   id = arrayBooks.length + 1;
   const newBook = {ID:id, TITLE:title, AUTHOR:author, GENERE:genere, PAGES:pages, STATUS:state};
   arrayBooks.push(newBook);
-  alert("New Book Created!!!\n" + JSON.stringify(arrayBooks));
+  jsonBooks = JSON.stringify(arrayBooks);
+  
   bodyTableContent = '';
   for (let i=0; i<arrayBooks.length; i++){
     bodyTableContent = bodyTableContent + `
@@ -55,17 +56,26 @@ function creaFun(){
     </tr>`;
     bodyTable.innerHTML = bodyTableContent;
   };
+}
 
-}
-function reaFun(){
-  //console.log("Reading...");
-  window.alert("Reading All Books\n" + jsonBooks);
-}
 function upFun(){
   //console.log("Updating...");
   window.alert("Updating...");
 }
+
 function delFun(){
   //console.log("Deleting...");
   window.alert("Deleting...");
+}
+
+function loadFun(){
+  //console.log("Reading...");
+  window.alert("Load File Books\n");
+  bodyTableContent = '';
+  readJSONFile();
+}
+
+function saveFun(){
+  //console.log("Reading...");
+  window.alert("Saved All Books\n" + jsonBooks);
 }
